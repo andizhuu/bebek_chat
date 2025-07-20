@@ -1,12 +1,9 @@
 workflows:
-  flutter-android:
-    name: Build Flutter Android APK
+  build-apk:
+    name: Build APK bebek_chat
     max_build_duration: 15
     environment:
       flutter: stable
-      xcode: latest
-      vars:
-        PACKAGE_NAME: "com.example.bebekchat"
     scripts:
       - name: Install dependencies
         script: |
@@ -16,3 +13,7 @@ workflows:
           flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - andhiiex@gmail.com
