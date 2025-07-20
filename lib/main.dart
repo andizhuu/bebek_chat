@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart'; // Tambahkan ini
+import 'screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const BebekChatApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BebekChatApp extends StatelessWidget {
+  const BebekChatApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Bebek Chat',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const HomeScreen(), // Ini ganti jadi home screen
+      home: const HomeScreen(),
     );
   }
 }
