@@ -1,15 +1,20 @@
 workflows:
-  android-workflow:
-    name: Build APK for Android
+  flutter-workflow:
+    name: Build APK bebek_chat
     max_build_duration: 15
     environment:
       flutter: stable
-      android_signing:
-        keystore: null
     scripts:
-      - name: Get dependencies
-        script: flutter pub get
+      - name: Install dependencies
+        script: |
+          flutter pub get
       - name: Build APK
-        script: flutter build apk --release
+        script: |
+          flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - andhiiex@gmail.com  # ← Ganti dengan email kamu
+
